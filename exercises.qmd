@@ -6,14 +6,195 @@ format:
     number-sections: true
     callout-appearance: minimal
 author: "Vu Nguyen Quang Duy"
+toc: true
 ---
 
-## Bayes' Rules
+# Bayes' Rules
+
+## Chapter Summary
+
+### Conditional vs unconditional probability
+
+Let $A$ and $B$ be two events, The **unconditional probability** of $A$, measures the probability of observing $A$, without any knowledge of $B$. In contrast, the **conditional probability** of $A$ given $B$, $P(A|B)$, measures the probability of observing $A$ in light of the information that $B$ occured.
+
+Conditional probabilities are fundamental to Bayesian analyses. In general, comparing the conditional vs unconditional probabilities,  $P(A|B)$ vs $P(A)$, reveals the extent to which information about $B$ informs our understanding of $A$. In some cases, the certainty of an event $A$ might *increase* or *decrease* in light of new data $B$. In other words:
+
+$$
+P(A|B) > P(A) \text{ Or } P(A|B) < P(A)
+$$
+
+The *order* of conditioning is also important. Since they measure two it’s typically the case that:
+
+$$
+P(A|B) \neq P(B|A)
+$$
+
+Finally, information about $B$ doesn’t always change our understanding of $A$. We call them **Independent events**.
+
+### Independent events
+
+Two events $A$ and $B$ are **independent** if and only if the occurrence of $B$ does not tell us anything about the occurrence of $A$:
+
+$$
+P(A|B) = P(A)
+$$
+
+### Probability vs likelihood
+
+When $B$ is known, the **conditional probability function** $P(\cdot|B)$ allows us to compare the probabilities of an unknown event, $A$ and $\overline{A}$, occurring with $B$:
+
+$$
+P(A|B) \text{ vs } P(\overline{A}|B)
+$$
+
+When $A$ is known, the **likelyhood function** $L(\cdot|A) = P(A|\cdot)$ allows us to evaluate the relative compatibility of data $A$ with events $B$ or $\overline{B}$:
+
+$$
+L(B|A) \text{ vs } L(\overline{B}|A)
+$$
+
+### Joint and conditional probabilities
+
+For events $A$ and $B$, the joint probablity of $A \cap B$ is calculated by weighting the conditional probability of $A$ given $B$ by the marginal probability of $B$:
+
+$$
+P(A \cap B) = P(A|B)P(B)
+$$ {#eq-21}
+
+Thus when $A$ and $B$ are *independent*,
+
+$$
+P(A\cap B) = P(A)P(B)
+$$
+
+Dividing both sides of @eq-21 by $P(B)$, and assuming $P(B) \neq 0$, reveals the definition of the conditional probability of $A$ given $B$:
+
+$$
+P(A/B) = \frac{P(A \cap B)}{P(B)}
+$$ {#eq-22}
+
+Thus, to evaluate the chance that $A$ occurs in light of information $B$ we can consider the chance that they occur together, $P(A \cap B)$, relative to the chance that $B$ occurs at all, $P(B)$
+
+### Law of Total Probability (LTP)
+
+$$
+P(A) = P(A \cap B) + P(A \cap \overline{B}) = P(A|B)P(B) + P(A|\overline{B})P(\overline{B})
+$$ {#eq-23}
+
+### Bayes' Rule for events
+
+For events $A$ and $B$, the posterior probability of $B$ given $A$ follows by combining @eq-21 with @eq-22 and recognizing that we can evaluate data $A$ through the likelihood function, $L(B|A) = P(A|B)$ and $L(\overline{B}|A) = P(A|\overline{B})$:
+
+$$
+P(B|A) = \frac{P(A \cap B)}{P(A)} = \frac{P(B)L(B|A)}{P(A)}
+$$ {#eq-24}
+
+where by the Law of Total Probability @eq-23:
+
+$$
+P(A) = P(B)L(B|A) + P(\overline{B})L(\overline{B}|A)
+$$ {#eq-25}
+
+More generally,
+
+$$
+\text{posterior} = \frac{\text{prior} \cdot \text{likelihood}}{\text{normalizing constant}}
+$$
+
+### Discrete probability model
+
+Let $Y$ be a discrete random variable. The probability model of $Y$ is specified by a **probability mass function (pmf) $f(y)$**. Thi pmf defines the probability of any given outcome $y$,
+
+$$
+f(y) = P(Y = y)
+$$
+
+and has the following properties:
+
+- $0 \leq f(y) \leq 1$ for all $y$, and
+
+- $\sum_{\text{all } y}f(y) = 1$, i.e., the probabilities of all possible outcomes of $y$ sum to 1.
+
+### Conditional probability model of data $Y$
+
+Let $Y$ be a discrete random variable and $\pi$ ve a parameter uop which $Y$ depends. The the conditional probability model of Y given $\pi$ is specified by conditional pmf $f(y|\pi)$. This pmf specifies the conditional probability of observing $y$ given $\pi$,
+
+$$
+f(y|\pi) = P(Y = y | \pi)
+$$
+
+and has the following properties:
+
+- $0 \leq f(y|\pi) \leq 1$ for all $y$, and
+
+- $\sum_{\text{all } y}f(y|\pi) = 1$
+
+### The Binomal model
+
+Let random variable $Y$ be the *number of successes* in a *fixed number of trials* $n$. Assume that the trials are *independent* and that the *probability of success* in each trial is $pi$. Then the conditional depdendence of $Y$ on $\pi$ can be modeled by the Binomal model with **parameters** $n$ and $\pi$. In mathematical notation:
+
+$$
+Y|\pi \sim \text{Bin}(n, \pi)
+$$
+
+where "$\sim$" can be read as "modeled by". Correspondingly, the Binomal model is specified by **conditional pmf**
+
+$$
+f(y|\pi) = \binom{n}{y} \pi ^2 \text{ for } y \in \{0,1,2, \dots ,n\}
+$$ {#eq-27}
+
+### Probability mass functions vs likelihood functions
+
+When $\pi$ is known, the **conditional pmf $f(\cdot | \pi)$** allows us to compare the probabilites of different possible values of data $Y$ (e.g., $y_1$ or $y_2$) occuring with $\pi$:
+
+$$
+f(y_1|\pi) \text{ vs } f(y_2|\pi)
+$$
+
+When $Y = y$ is known, the **likelihood function $L(\cdot|y) = f(y|\cdot)$** allows us to compare the relative likelihood of observing data $y$ under different possible values of $\pi$ (e.g., $\pi_1$ or $\pi_2$):
+
+$$
+L(\pi_1|y) \text{ vs } L(\pi_2|y)
+$$
+
+Thus, $L(\cdot|y)$ provides the tool we need to evaluate the relative compatibility of data $Y = y$ with various $\pi$ values.
+
+### Bayes' Rule for variables
+
+For any variables $\pi$ and $Y$, let $f(\pi)$ denote the prior pmf of $\pi$ and $L(\pi|y)$ denote the likelihood function of $\pi$ given observed data $Y=y$. Then the posterior pmf of $\pi$ given data $Y = y$ is:
+
+$$
+f(\pi | y) = \frac{\text{prior} \cdot \text{likelihood}}{\text{normalizing constant}} = \frac{f(\pi) L(\pi|y)}{f(y)}
+$$ {#eq-2.12}
+
+where, by the Law of Total Probability, the overall probability of observing data $Y = y$ accross all possible $\pi$ is:
+
+$$
+f(y) = \sum_{\text{all } y} f(\pi) L(\pi|y)
+$$
+
+### Propotionality
+
+Since $f(y)$ is merely a normalizing constant which does not depend of $\pi$, the posterior pmf $f(\pi|y)$ is propotional to the product of $f(\pi)$ and $L(\pi|y)$:
+
+$$
+f(\pi | y) = \frac{f(\pi) L(\pi|y)}{f(y)} \propto f(\pi)L(\pi|y)
+$$
+
+That is,
+
+$$
+\text{posterior} \propto \text{prior} \cdot \text{likelihood}
+$$
+
+The significance of this proportionality is that all the information we need to build the posterior model is held in the prior and likelihood.
+
+## Excercises
 
 ### Buidling up to Bayes' Rule
 
-::: {.callout-note}
-**Excercise 1**. *Comparing the prior and posterior*
+::: {#exr-1}
+*Comparing the prior and posterior*
 
 For each scenario below, you're given a pair of events, $A$ and $B$. Explain what you believe to be the relationship between the posterior and prior probabilities of $B$: $P(B|A) > P(B)$ or $P(B|A) < P(B)$
 
