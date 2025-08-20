@@ -30,8 +30,36 @@ d) $A=$ your friend includes three hashtags in their tweet. $B=$ the tweet gets 
 
 a) **Answer**: $P(B|A) > P(B)$
 
-- The prior probability, $P(B)$: The general probability that I will enjoy Benn's newest novel before reading her first one.
+- The prior probability, $P(B)$: The general probability of enjoying Benn's newest novel before reading any of her previous work.
 
-- The posterior probability, $P(B∣A)$, The updated probability that I will enjoy Benn's newest novel after I have read and enjoyed her first one.
+- The posterior probability, $P(B∣A)$: The updated probability of enjoying Benn's newest novel, given that her first novel was read and enjoyed.
 
-The event $A$ is positive evidence that provides a reason to increase your belief in event $B$. Since I had a favorable experience with the author's work, my updated belief (the posterior) is stronger and therefore higher than your initial belief (the prior).
+The event $A$ (enjoying the first novel) is positive evidence that provides a reason to increase belief in event $B$ (enjoying the newest novel). A favorable experience with the author's work makes the updated belief (the posterior) stronger and therefore higher than the initial belief (the prior).
+
+b) **Answer**: $P(B|A) < P(B)$
+
+- The prior probability, $P(B)$: The general probability that it will be 60 degrees tomorrow.
+
+- The posterior probability, $P(B∣A)$: The updated probability that it will be 60 degrees tomorrow, given that it was 0 degrees Fahrenheit yesterday.
+
+The event $A$ (a temperature of 0°F yesterday) is negative evidence that provides a reason to decrease the belief in event $B$ (a temperature of 60°F tomorrow). A temperature of 0°F makes it significantly less likely that the temperature will be a relatively mild 60°F the next day. This new information acts as negative evidence, causing a decrease in the belief of event B.
+
+c) **Answer**: $P(B|A) > P(B)$
+
+- The prior probability, $P(B)$: The general probability that the authors will make several typos in their writing today.
+
+- The posterior probability, $P(B∣A)$:  The updated probability that the authors will make several typos, given they only got 3 hours of sleep last night.
+
+The event $A$ (only 3 hours of sleep) is positive evidence that increases the probability of event $B$ (making typos). Lack of sleep is a well-known factor that impairs cognitive function and attention to detail, making errors like typos more probable. The updated belief is therefore higher than the initial belief.
+
+d) **Answer**: $P(B|A) > P(B)$
+
+- The prior probability, $P(B)$: The general probability that the tweet will be retweeted. This is the baseline likelihood without knowing anything about the tweet's content or format.
+
+- The posterior probability, $P(B∣A)$:  he updated probability that the tweet will be retweeted, given that it includes three hashtags.
+
+The event $A$ (including three hashtags) is positive evidence that increases the probability of event $B$ (the tweet being retweeted). Research on social media engagement shows that tweets with hashtags, especially a moderate number, tend to have wider reach and higher engagement, which includes retweets. Therefore, the updated belief is higher than the initial belief.
+
+
+
+
