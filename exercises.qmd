@@ -1,0 +1,37 @@
+---
+title: "Bayesian Statistics Workbook"
+format:
+  pdf:
+    documentclass: scrartcl
+    number-sections: true
+    callout-appearance: minimal
+author: "Vu Nguyen Quang Duy"
+---
+
+## Bayes' Rules
+
+### Buidling up to Bayes' Rule
+
+::: {.callout-note}
+**Excercise 1**. *Comparing the prior and posterior*
+
+For each scenario below, you're given a pair of events, $A$ and $B$. Explain what you believe to be the relationship between the posterior and prior probabilities of $B$: $P(B|A) > P(B)$ or $P(B|A) < P(B)$
+
+a) $A=$ you just finished reading Lambda Literary Award-winning author Nicole Dennis-Benn's first novel, and you enjoyed it! $B=$ you will also enjot Benn's newest novel.
+
+b) $A=$ it's 0 degrees Fahrenheit in Minnesota on a January day. $B=$ it will be 60 degrees tomorrow.
+
+c) $A=$ the authors only got 3 hours of sleep last night. $B=$ the authors make several typos in their writing today.
+
+d) $A=$ your friend includes three hashtags in their tweet. $B=$ the tweet gets retweeted.
+:::
+
+**Solution**
+
+a) **Answer**: $P(B|A) > P(B)$
+
+- The prior probability, $P(B)$: The general probability that I will enjoy Benn's newest novel before reading her first one.
+
+- The posterior probability, $P(B∣A)$, The updated probability that I will enjoy Benn's newest novel after I have read and enjoyed her first one.
+
+The event $A$ is positive evidence that provides a reason to increase your belief in event $B$. Since I had a favorable experience with the author's work, my updated belief (the posterior) is stronger and therefore higher than your initial belief (the prior).
