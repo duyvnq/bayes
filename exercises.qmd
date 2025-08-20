@@ -29,7 +29,6 @@ $$
 P(A|B) \neq P(B|A)
 $$
 
-Finally, information about $B$ doesn’t always change our understanding of $A$. We call them **Independent events**.
 
 ### Independent events
 
@@ -189,11 +188,13 @@ $$
 
 The significance of this proportionality is that all the information we need to build the posterior model is held in the prior and likelihood.
 
+\pagebreak
+
 ## Excercises
 
 ### Buidling up to Bayes' Rule
 
-::: {#exr-1}
+::: {#exr-1_65}
 *Comparing the prior and posterior*
 
 For each scenario below, you're given a pair of events, $A$ and $B$. Explain what you believe to be the relationship between the posterior and prior probabilities of $B$: $P(B|A) > P(B)$ or $P(B|A) < P(B)$
@@ -241,6 +242,75 @@ d) **Answer**: $P(B|A) > P(B)$
 
 The event $A$ (including three hashtags) is positive evidence that increases the probability of event $B$ (the tweet being retweeted). Research on social media engagement shows that tweets with hashtags, especially a moderate number, tend to have wider reach and higher engagement, which includes retweets. Therefore, the updated belief is higher than the initial belief.
 
+---
 
+:::{#exr-2_66} 
+*Marginal, conditional, or joint?*
 
+Define the following events for a resident of a fictional town: 
 
+- $A=$ drives 10 miles per hour above the speed limit, 
+
+- $B=$ gets a speeding ticket, 
+
+- $C=$ took statistics at the local college, 
+
+- $D=$ has used R, 
+
+- $E=$ likes the music of Prince,
+
+- $F=$  is a Minnesotan.
+
+Several facts about these events are listed below. Specify each of these facts using probability notation, paying special attention to whether it’s a marginal, conditional, or joint probability.
+
+a) 73% of people that drive 10 miles per hour above the speed limit get a speeding ticket.
+
+b) 20% of residents drive 10 miles per hour above the speed limit.
+
+c) 15% of residents have used R.
+
+d) 91% of statistics students at the local college have used R.
+
+e) 38% of residents are Minnesotans that like the music of Prince.
+
+f) 95% of the Minnesotan residents like the music of Prince.
+
+:::
+
+**Solution**
+
+a) **Answer**: conditional probability
+
+This fact gives the probability of getting a speeding ticket ($B$) given that a person is already driving 10 miles per hour above the speed limit ($A$). 
+
+The probability notation for this is: $P(B|A) = 0.73$ 
+
+b) **Answer**: marginal probability
+
+This facts only describe the proportion of residents that drives 10 miles per hour above the speed limit ($A$) without any conditions.
+
+The probability notation for this is: $P(A) = 0.20$ 
+
+c) **Answer**: marginal probability
+
+This facts only describe the proportion of residents that have used R ($D$) without any conditions.
+
+The probability notation for this is: $P(D) = 0.15$
+
+d) **Answer**: conditional probability
+
+This fact It states the probability of a person having used R ($D$) given that they took statistics at the local college ($C$). 
+
+The probability notation for this is: $P(D|C) = 0.91$ 
+
+e) **Answer**: joint probability
+
+This is a joint probability because it refers to the likelihood of two events happening at the same time: being a Minnesotan and liking the music of Prince.
+
+The probability notation for this is: $P(E \cap F) = 0.38$ 
+
+f) **Answer**: conditional probability
+
+This is a conditional probability. It states the probability of a person liking the music of Prince ($E$) given that they are a Minnesotan ($F$).
+
+The probability notation for this is: $P(E|F) = 0.95$ 
