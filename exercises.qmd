@@ -313,6 +313,8 @@ This is a conditional probability. It states the probability of a person liking 
 
 The probability notation for this is: $P(E|F) = 0.95$
 
+------------------------------------------------------------------------
+
 ::: {#exr-2.3}
 *Binomial practice*
 
@@ -375,3 +377,55 @@ $$
 f(y|0.80) = \binom{60}{y} 0,80^2 \text{ for } y \in \{0,1,2, \dots ,60\}
 $$
 
+### Practice Bayes’ Rule for events
+
+::: {#exr-2.4}
+*Vampires?*
+
+Edward is trying to prove to Bella that vampires exist. Bella thinks there is a 0.05 probability that vampires exist. She also believes that the probability that someone can sparkle like a diamond if vampires exist is 0.7, and the probability that someone can sparkle like a diamond if vampires don’t exist is 0.03. Edward then goes into a meadow and shows Bella that he can sparkle like a diamond. Given that Edward sparkled like a diamond, what is the probability that vampires exist?
+:::
+
+**Solutions**
+
+Call $V$ is the event "Vampires exist". We have the prior probability model as follow:
+
+| event       | $V$  | $\overline{V}$ | total |
+|-------------|------|----------------|-------|
+| probability | 0.05 | 0.095          | 1     |
+
+Call event "Someone can sparkle like a diamond" as $S$, the conditional probability for $S$ given that vampire exist is $P(S|V)$. It informs us the likelihood of $V$ in light of $S$, the $L(V|S)$:
+
+| event       | $V$  | $\overline{V}$ | total |
+|-------------|------|----------------|-------|
+| probability | 0.05 | 0.095          | 1     |
+| likelihood  | 0.7  | 0.03           |       |
+
+Using the Law of Total Probability, we can calculate the normalizing constant $P(S)$:
+
+$$
+P(S) = P(V)L(V|S) + P(\overline{V})L(\overline{V}|S)
+$$
+
+Using Bayes' Rule, we can calculate the probablity that vampires exist given that Edward can sparkle like a diamond, $P(V|S)$:
+
+$$
+P(V|S) = \frac{P(V)L(V|S)}{P(S)}
+$$
+
+```{r}
+#| echo: false
+
+result_2_4 <- round((0.05*0.7)/(0.05*0.7 + 0.095*0.3),3)
+```
+
+After plug in all the numbers, we have the result of `{r} result_2_4`.
+
+---
+
+::: {#exr-2.5}
+
+*Sick trees*
+
+
+
+:::
