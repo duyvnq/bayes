@@ -17,7 +17,7 @@ toc: true
 
 Let $A$ and $B$ be two events, The **unconditional probability** of $A$, measures the probability of observing $A$, without any knowledge of $B$. In contrast, the **conditional probability** of $A$ given $B$, $P(A|B)$, measures the probability of observing $A$ in light of the information that $B$ occured.
 
-Conditional probabilities are fundamental to Bayesian analyses. In general, comparing the conditional vs unconditional probabilities,  $P(A|B)$ vs $P(A)$, reveals the extent to which information about $B$ informs our understanding of $A$. In some cases, the certainty of an event $A$ might *increase* or *decrease* in light of new data $B$. In other words:
+Conditional probabilities are fundamental to Bayesian analyses. In general, comparing the conditional vs unconditional probabilities, $P(A|B)$ vs $P(A)$, reveals the extent to which information about $B$ informs our understanding of $A$. In some cases, the certainty of an event $A$ might *increase* or *decrease* in light of new data $B$. In other words:
 
 $$
 P(A|B) > P(A) \text{ Or } P(A|B) < P(A)
@@ -28,7 +28,6 @@ The *order* of conditioning is also important. Since they measure two it’s typ
 $$
 P(A|B) \neq P(B|A)
 $$
-
 
 ### Independent events
 
@@ -102,7 +101,7 @@ $$
 
 ### Discrete probability model
 
-Let $Y$ be a discrete random variable. The probability model of $Y$ is specified by a **probability mass function (pmf) $f(y)$**. Thi pmf defines the probability of any given outcome $y$,
+Let $Y$ be a discrete random variable. The probability model of $Y$ is specified by a **probability mass function (pmf)** $f(y)$. Thi pmf defines the probability of any given outcome $y$,
 
 $$
 f(y) = P(Y = y)
@@ -110,9 +109,9 @@ $$
 
 and has the following properties:
 
-- $0 \leq f(y) \leq 1$ for all $y$, and
+-   $0 \leq f(y) \leq 1$ for all $y$, and
 
-- $\sum_{\text{all } y}f(y) = 1$, i.e., the probabilities of all possible outcomes of $y$ sum to 1.
+-   $\sum_{\text{all } y}f(y) = 1$, i.e., the probabilities of all possible outcomes of $y$ sum to 1.
 
 ### Conditional probability model of data $Y$
 
@@ -124,9 +123,9 @@ $$
 
 and has the following properties:
 
-- $0 \leq f(y|\pi) \leq 1$ for all $y$, and
+-   $0 \leq f(y|\pi) \leq 1$ for all $y$, and
 
-- $\sum_{\text{all } y}f(y|\pi) = 1$
+-   $\sum_{\text{all } y}f(y|\pi) = 1$
 
 ### The Binomal model
 
@@ -144,13 +143,13 @@ $$ {#eq-27}
 
 ### Probability mass functions vs likelihood functions
 
-When $\pi$ is known, the **conditional pmf $f(\cdot | \pi)$** allows us to compare the probabilites of different possible values of data $Y$ (e.g., $y_1$ or $y_2$) occuring with $\pi$:
+When $\pi$ is known, the **conditional pmf** $f(\cdot | \pi)$ allows us to compare the probabilites of different possible values of data $Y$ (e.g., $y_1$ or $y_2$) occuring with $\pi$:
 
 $$
 f(y_1|\pi) \text{ vs } f(y_2|\pi)
 $$
 
-When $Y = y$ is known, the **likelihood function $L(\cdot|y) = f(y|\cdot)$** allows us to compare the relative likelihood of observing data $y$ under different possible values of $\pi$ (e.g., $\pi_1$ or $\pi_2$):
+When $Y = y$ is known, the **likelihood function** $L(\cdot|y) = f(y|\cdot)$ allows us to compare the relative likelihood of observing data $y$ under different possible values of $\pi$ (e.g., $\pi_1$ or $\pi_2$):
 
 $$
 L(\pi_1|y) \text{ vs } L(\pi_2|y)
@@ -199,150 +198,148 @@ The significance of this proportionality is that all the information we need to 
 
 For each scenario below, you're given a pair of events, $A$ and $B$. Explain what you believe to be the relationship between the posterior and prior probabilities of $B$: $P(B|A) > P(B)$ or $P(B|A) < P(B)$
 
-a) $A=$ you just finished reading Lambda Literary Award-winning author Nicole Dennis-Benn's first novel, and you enjoyed it! $B=$ you will also enjot Benn's newest novel.
+a)  $A=$ you just finished reading Lambda Literary Award-winning author Nicole Dennis-Benn's first novel, and you enjoyed it! $B=$ you will also enjot Benn's newest novel.
 
-b) $A=$ it's 0 degrees Fahrenheit in Minnesota on a January day. $B=$ it will be 60 degrees tomorrow.
+b)  $A=$ it's 0 degrees Fahrenheit in Minnesota on a January day. $B=$ it will be 60 degrees tomorrow.
 
-c) $A=$ the authors only got 3 hours of sleep last night. $B=$ the authors make several typos in their writing today.
+c)  $A=$ the authors only got 3 hours of sleep last night. $B=$ the authors make several typos in their writing today.
 
-d) $A=$ your friend includes three hashtags in their tweet. $B=$ the tweet gets retweeted.
+d)  $A=$ your friend includes three hashtags in their tweet. $B=$ the tweet gets retweeted.
 :::
 
 **Solution**
 
-a) **Answer**: $P(B|A) > P(B)$
+a)  **Answer**: $P(B|A) > P(B)$
 
-- The prior probability, $P(B)$: The general probability of enjoying Benn's newest novel before reading any of her previous work.
+-   The prior probability, $P(B)$: The general probability of enjoying Benn's newest novel before reading any of her previous work.
 
-- The posterior probability, $P(B∣A)$: The updated probability of enjoying Benn's newest novel, given that her first novel was read and enjoyed.
+-   The posterior probability, $P(B∣A)$: The updated probability of enjoying Benn's newest novel, given that her first novel was read and enjoyed.
 
 The event $A$ (enjoying the first novel) is positive evidence that provides a reason to increase belief in event $B$ (enjoying the newest novel). A favorable experience with the author's work makes the updated belief (the posterior) stronger and therefore higher than the initial belief (the prior).
 
-b) **Answer**: $P(B|A) < P(B)$
+b)  **Answer**: $P(B|A) < P(B)$
 
-- The prior probability, $P(B)$: The general probability that it will be 60 degrees tomorrow.
+-   The prior probability, $P(B)$: The general probability that it will be 60 degrees tomorrow.
 
-- The posterior probability, $P(B∣A)$: The updated probability that it will be 60 degrees tomorrow, given that it was 0 degrees Fahrenheit yesterday.
+-   The posterior probability, $P(B∣A)$: The updated probability that it will be 60 degrees tomorrow, given that it was 0 degrees Fahrenheit yesterday.
 
 The event $A$ (a temperature of 0°F yesterday) is negative evidence that provides a reason to decrease the belief in event $B$ (a temperature of 60°F tomorrow). A temperature of 0°F makes it significantly less likely that the temperature will be a relatively mild 60°F the next day. This new information acts as negative evidence, causing a decrease in the belief of event B.
 
-c) **Answer**: $P(B|A) > P(B)$
+c)  **Answer**: $P(B|A) > P(B)$
 
-- The prior probability, $P(B)$: The general probability that the authors will make several typos in their writing today.
+-   The prior probability, $P(B)$: The general probability that the authors will make several typos in their writing today.
 
-- The posterior probability, $P(B∣A)$:  The updated probability that the authors will make several typos, given they only got 3 hours of sleep last night.
+-   The posterior probability, $P(B∣A)$: The updated probability that the authors will make several typos, given they only got 3 hours of sleep last night.
 
 The event $A$ (only 3 hours of sleep) is positive evidence that increases the probability of event $B$ (making typos). Lack of sleep is a well-known factor that impairs cognitive function and attention to detail, making errors like typos more probable. The updated belief is therefore higher than the initial belief.
 
-d) **Answer**: $P(B|A) > P(B)$
+d)  **Answer**: $P(B|A) > P(B)$
 
-- The prior probability, $P(B)$: The general probability that the tweet will be retweeted. This is the baseline likelihood without knowing anything about the tweet's content or format.
+-   The prior probability, $P(B)$: The general probability that the tweet will be retweeted. This is the baseline likelihood without knowing anything about the tweet's content or format.
 
-- The posterior probability, $P(B∣A)$:  he updated probability that the tweet will be retweeted, given that it includes three hashtags.
+-   The posterior probability, $P(B∣A)$: he updated probability that the tweet will be retweeted, given that it includes three hashtags.
 
 The event $A$ (including three hashtags) is positive evidence that increases the probability of event $B$ (the tweet being retweeted). Research on social media engagement shows that tweets with hashtags, especially a moderate number, tend to have wider reach and higher engagement, which includes retweets. Therefore, the updated belief is higher than the initial belief.
 
----
+------------------------------------------------------------------------
 
-:::{#exr-2_66} 
+::: {#exr-2_66}
 *Marginal, conditional, or joint?*
 
-Define the following events for a resident of a fictional town: 
+Define the following events for a resident of a fictional town:
 
-- $A=$ drives 10 miles per hour above the speed limit, 
+-   $A=$ drives 10 miles per hour above the speed limit,
 
-- $B=$ gets a speeding ticket, 
+-   $B=$ gets a speeding ticket,
 
-- $C=$ took statistics at the local college, 
+-   $C=$ took statistics at the local college,
 
-- $D=$ has used R, 
+-   $D=$ has used R,
 
-- $E=$ likes the music of Prince,
+-   $E=$ likes the music of Prince,
 
-- $F=$  is a Minnesotan.
+-   $F=$ is a Minnesotan.
 
 Several facts about these events are listed below. Specify each of these facts using probability notation, paying special attention to whether it’s a marginal, conditional, or joint probability.
 
-a) 73% of people that drive 10 miles per hour above the speed limit get a speeding ticket.
+a)  73% of people that drive 10 miles per hour above the speed limit get a speeding ticket.
 
-b) 20% of residents drive 10 miles per hour above the speed limit.
+b)  20% of residents drive 10 miles per hour above the speed limit.
 
-c) 15% of residents have used R.
+c)  15% of residents have used R.
 
-d) 91% of statistics students at the local college have used R.
+d)  91% of statistics students at the local college have used R.
 
-e) 38% of residents are Minnesotans that like the music of Prince.
+e)  38% of residents are Minnesotans that like the music of Prince.
 
-f) 95% of the Minnesotan residents like the music of Prince.
-
+f)  95% of the Minnesotan residents like the music of Prince.
 :::
 
 **Solution**
 
-a) **Answer**: conditional probability
+a)  **Answer**: conditional probability
 
-This fact gives the probability of getting a speeding ticket ($B$) given that a person is already driving 10 miles per hour above the speed limit ($A$). 
+This fact gives the probability of getting a speeding ticket ($B$) given that a person is already driving 10 miles per hour above the speed limit ($A$).
 
-The probability notation for this is: $P(B|A) = 0.73$ 
+The probability notation for this is: $P(B|A) = 0.73$
 
-b) **Answer**: marginal probability
+b)  **Answer**: marginal probability
 
 This facts only describe the proportion of residents that drives 10 miles per hour above the speed limit ($A$) without any conditions.
 
-The probability notation for this is: $P(A) = 0.20$ 
+The probability notation for this is: $P(A) = 0.20$
 
-c) **Answer**: marginal probability
+c)  **Answer**: marginal probability
 
 This facts only describe the proportion of residents that have used R ($D$) without any conditions.
 
 The probability notation for this is: $P(D) = 0.15$
 
-d) **Answer**: conditional probability
+d)  **Answer**: conditional probability
 
-This fact It states the probability of a person having used R ($D$) given that they took statistics at the local college ($C$). 
+This fact It states the probability of a person having used R ($D$) given that they took statistics at the local college ($C$).
 
-The probability notation for this is: $P(D|C) = 0.91$ 
+The probability notation for this is: $P(D|C) = 0.91$
 
-e) **Answer**: joint probability
+e)  **Answer**: joint probability
 
 This is a joint probability because it refers to the likelihood of two events happening at the same time: being a Minnesotan and liking the music of Prince.
 
-The probability notation for this is: $P(E \cap F) = 0.38$ 
+The probability notation for this is: $P(E \cap F) = 0.38$
 
-f) **Answer**: conditional probability
+f)  **Answer**: conditional probability
 
 This is a conditional probability. It states the probability of a person liking the music of Prince ($E$) given that they are a Minnesotan ($F$).
 
-The probability notation for this is: $P(E|F) = 0.95$ 
+The probability notation for this is: $P(E|F) = 0.95$
 
-:::{#exr-2.3}
+::: {#exr-2.3}
 *Binomial practice*
 
- For each variable $Y$ below, determine whether $Y$ is Binomial. If yes, use notation to specify this model and its parameters. If not, explain why the Binomial model is not appropriate for $Y$.
+For each variable $Y$ below, determine whether $Y$ is Binomial. If yes, use notation to specify this model and its parameters. If not, explain why the Binomial model is not appropriate for $Y$.
 
- a) At a certain hospital, an average of 6 babies are born each hour. Let $Y$ be the number of babies born between 9 a.m. and 10 a.m. tomorrow.
+a)  At a certain hospital, an average of 6 babies are born each hour. Let $Y$ be the number of babies born between 9 a.m. and 10 a.m. tomorrow.
 
- b) Tulips planted in fall have a 90% chance of blooming in spring. You plant 27 tulips this year. Let $Y$ be the number that bloom.
+b)  Tulips planted in fall have a 90% chance of blooming in spring. You plant 27 tulips this year. Let $Y$ be the number that bloom.
 
- c) Each time they try out for the television show *Ru Paul’s Drag Race*, Alaska has a 17% probability of succeeding. Let $Y$ be the number of times Alaska has to try out until they’re successful.
- 
- d) $Y$ is the amount of time that Henry is late to your lunch date.
+c)  Each time they try out for the television show *Ru Paul’s Drag Race*, Alaska has a 17% probability of succeeding. Let $Y$ be the number of times Alaska has to try out until they’re successful.
 
- e) $Y$ is the probability that your friends will throw you a surprise birthday party even though you said you hate being the center of attention and just want to go out to eat.
+d)  $Y$ is the amount of time that Henry is late to your lunch date.
 
- f) You invite 60 people to your “$\pi$ day” party, none of whom know each other, and each of whom has an 80% chance of showing up. Let  $Y$ be the total number of guests at your party.
+e)  $Y$ is the probability that your friends will throw you a surprise birthday party even though you said you hate being the center of attention and just want to go out to eat.
 
+f)  You invite 60 people to your “$\pi$ day” party, none of whom know each other, and each of whom has an 80% chance of showing up. Let $Y$ be the total number of guests at your party.
 :::
 
 **Solution**
 
 In the Binomal model, we need to specified three parameters:
 
-- $Y$: number of successes,
+-   $Y$: number of successes,
 
-- $n$: fixed number of trials, and each trial must have only two outcomes, typically called "success" and "failure."
+-   $n$: fixed number of trials, and each trial must have only two outcomes, typically called "success" and "failure."
 
-- $\pi$: probability of successin each trial and must be the same for every trial.
+-   $\pi$: probability of successin each trial and must be the same for every trial.
 
 and it denotes as:
 
@@ -350,40 +347,31 @@ $$
 f(y|\pi) = \binom{n}{y} \pi ^2 \text{ for } y \in \{0,1,2, \dots ,n\}
 $$
 
-a) **Answer**: $Y$ is not a binomal variable
+a)  **Answer**: $Y$ is not a binomal variable
 
 because no fixed number of trials ($n$). The number of "trials" (i.e., moments a baby could be born) is not a fixed, countable number.
 
-b) **Answer**: $Y$ is a binomal variable
+b)  **Answer**: $Y$ is a binomal variable
 
 $$
 f(y|0.90) = \binom{27}{y} 0,90^2 \text{ for } y \in \{0,1,2, \dots ,27\}
 $$
 
-c) **Answer**: $Y$ is not a binomal variable
+c)  **Answer**: $Y$ is not a binomal variable
 
 Because the number of trials is not predetermined; it could be 1, 2, 3, or any number of attempts until Alaska is successful.
 
-d) **Answer**: $Y$ is not a binomal variable
+d)  **Answer**: $Y$ is not a binomal variable
 
-Because the amount of time Henry is late can be any value within a range (e.g., 5 minutes, 10.5 minutes, 20 minutes, etc.), not just two discrete outcomes. And there is no fixed number of "trials" in the amount of time Henry is late. 
+Because the amount of time Henry is late can be any value within a range (e.g., 5 minutes, 10.5 minutes, 20 minutes, etc.), not just two discrete outcomes. And there is no fixed number of "trials" in the amount of time Henry is late.
 
-e) **Answer**: $Y$ is not a binomal variable
+e)  **Answer**: $Y$ is not a binomal variable
 
 Because the variable is a single event.
 
-f) **Answer**: $Y$ is a binomal variable
+f)  **Answer**: $Y$ is a binomal variable
 
 $$
 f(y|0.80) = \binom{60}{y} 0,80^2 \text{ for } y \in \{0,1,2, \dots ,60\}
 $$
 
-### Practice Bayes’ Rule for events
-
-:::{#exr-2.4}
-
-*Vampires?*
-
-Edward is trying to prove to Bella that vampires exist. Bella thinks there is a 0.05 probability that vampires exist. She also believes that the probability that someone can sparkle like a diamond if vampires exist is 0.7, and the probability that someone can sparkle like a diamond if vampires don’t exist is 0.03. Edward then goes into a meadow and shows Bella that he can sparkle like a diamond. Given that Edward sparkled like a diamond, what is the probability that vampires exist?
-
-:::
