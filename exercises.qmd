@@ -130,7 +130,7 @@ and has the following properties:
 
 ### The Binomal model
 
-Let random variable $Y$ be the *number of successes* in a *fixed number of trials* $n$. Assume that the trials are *independent* and that the *probability of success* in each trial is $pi$. Then the conditional depdendence of $Y$ on $\pi$ can be modeled by the Binomal model with **parameters** $n$ and $\pi$. In mathematical notation:
+Let random variable $Y$ be the *number of successes* in a *fixed number of trials* $n$. Assume that the trials are *independent* and that the *probability of success* in each trial is $\pi$. Then the conditional depdendence of $Y$ on $\pi$ can be modeled by the Binomal model with **parameters** $n$ and $\pi$. In mathematical notation:
 
 $$
 Y|\pi \sim \text{Bin}(n, \pi)
@@ -314,3 +314,76 @@ f) **Answer**: conditional probability
 This is a conditional probability. It states the probability of a person liking the music of Prince ($E$) given that they are a Minnesotan ($F$).
 
 The probability notation for this is: $P(E|F) = 0.95$ 
+
+:::{#exr-2.3}
+*Binomial practice*
+
+ For each variable $Y$ below, determine whether $Y$ is Binomial. If yes, use notation to specify this model and its parameters. If not, explain why the Binomial model is not appropriate for $Y$.
+
+ a) At a certain hospital, an average of 6 babies are born each hour. Let $Y$ be the number of babies born between 9 a.m. and 10 a.m. tomorrow.
+
+ b) Tulips planted in fall have a 90% chance of blooming in spring. You plant 27 tulips this year. Let $Y$ be the number that bloom.
+
+ c) Each time they try out for the television show *Ru Paul’s Drag Race*, Alaska has a 17% probability of succeeding. Let $Y$ be the number of times Alaska has to try out until they’re successful.
+ 
+ d) $Y$ is the amount of time that Henry is late to your lunch date.
+
+ e) $Y$ is the probability that your friends will throw you a surprise birthday party even though you said you hate being the center of attention and just want to go out to eat.
+
+ f) You invite 60 people to your “$\pi$ day” party, none of whom know each other, and each of whom has an 80% chance of showing up. Let  $Y$ be the total number of guests at your party.
+
+:::
+
+**Solution**
+
+In the Binomal model, we need to specified three parameters:
+
+- $Y$: number of successes,
+
+- $n$: fixed number of trials, and each trial must have only two outcomes, typically called "success" and "failure."
+
+- $\pi$: probability of successin each trial and must be the same for every trial.
+
+and it denotes as:
+
+$$
+f(y|\pi) = \binom{n}{y} \pi ^2 \text{ for } y \in \{0,1,2, \dots ,n\}
+$$
+
+a) **Answer**: $Y$ is not a binomal variable
+
+because no fixed number of trials ($n$). The number of "trials" (i.e., moments a baby could be born) is not a fixed, countable number.
+
+b) **Answer**: $Y$ is a binomal variable
+
+$$
+f(y|0.90) = \binom{27}{y} 0,90^2 \text{ for } y \in \{0,1,2, \dots ,27\}
+$$
+
+c) **Answer**: $Y$ is not a binomal variable
+
+Because the number of trials is not predetermined; it could be 1, 2, 3, or any number of attempts until Alaska is successful.
+
+d) **Answer**: $Y$ is not a binomal variable
+
+Because the amount of time Henry is late can be any value within a range (e.g., 5 minutes, 10.5 minutes, 20 minutes, etc.), not just two discrete outcomes. And there is no fixed number of "trials" in the amount of time Henry is late. 
+
+e) **Answer**: $Y$ is not a binomal variable
+
+Because the variable is a single event.
+
+f) **Answer**: $Y$ is a binomal variable
+
+$$
+f(y|0.80) = \binom{60}{y} 0,80^2 \text{ for } y \in \{0,1,2, \dots ,60\}
+$$
+
+### Practice Bayes’ Rule for events
+
+:::{#exr-2.4}
+
+*Vampires?*
+
+Edward is trying to prove to Bella that vampires exist. Bella thinks there is a 0.05 probability that vampires exist. She also believes that the probability that someone can sparkle like a diamond if vampires exist is 0.7, and the probability that someone can sparkle like a diamond if vampires don’t exist is 0.03. Edward then goes into a meadow and shows Bella that he can sparkle like a diamond. Given that Edward sparkled like a diamond, what is the probability that vampires exist?
+
+:::
