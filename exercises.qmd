@@ -549,7 +549,7 @@ b) Given that Matt is looking at the profile of someone who is non-binary, what�
 #| echo: false
 
 a2_7 <- 0.08*0.20 + (1-0.08)*0.10
-b2_7 <- (0.08*0.20)/a2_7
+b2_7 <- round((0.08*0.20)/a2_7,3)
 ```
 
 Let's call event "Matt swipes right" $R$, we have $P(R) = 0.08$.
@@ -572,3 +572,52 @@ $$
 
 The result is `{r} b2_7`.
 
+:::{#exr-2.8}
+*Flight delays*
+
+For a certain airline, 30% of the flights depart in the morning, 30% depart in the afternoon, and 40% depart in the evening. Frustratingly, 15% of all flights are delayed. Of the delayed flights, 40% are morning flights, 50% are afternoon flights, and 10% are evening flights. Alicia and Mine are taking separate flights to attend a conference.
+
+a) Mine is on a morning flight. What’s the probability that her flight will be delayed?
+
+b) Alicia’s flight is not delayed. What’s the probability that she’s on a morning flight?
+
+:::
+
+**Solution**
+
+```{r 2.8}
+#| echo: false
+
+
+a2_8 <- 0.15*0.40/0.30
+b2_8 <- round((0.3*(1-a2_8))/(1-0.15),4)
+
+```
+
+Let's call event "flight depart in the morning" $M$, "flight depart in the afternoon" $A$, "flight depart in the evening" $E$, we have $P(M)=0.30$, $P(A)=0.30$, and $P(E)=0.10$.
+
+Let's call event "flight is delayed" $D$, we have $P(D)=0.15$. Also, $P(M|D)=0.40$, $P(A|D)=0.50$, $P(E|D)=0.10$.
+
+a) To calculate the probability that Mine's flight will be delayed given that her flight is in the morning, $P(D|M)$, we use Bayes' Rule:
+
+$$
+P(D|M) = \frac{P(D)L(D|M)}{P(M)}
+$$
+
+The result is `{r} a2_8`, which mean there are `{r} paste0(a2_8*100, "%")` chance her flight will be delayed of she flight in the morning.
+
+b) The probability that Alicia's on a morning flight given that her flight is not delayed is noted as $P(M|\overline{D})$.
+
+Using the Bayes' Rule, we have
+
+$$
+P(M|\overline{D}) = \frac{P(M)L(M|\overline{D})}{P(\overline{D})}
+$$
+
+Given that $L(M|\overline{D}) = P(\overline{D}|M) = 1 - P(D|M)$. Which turns the equation to:
+
+$$
+P(M|\overline{D}) = \frac{P(M)[1 - P(D|M)]}{1-P(D)}
+$$
+
+Plug in all the number, the result is `{r} b2_8`, which mean there is `{r} paste0(b2_8*100, "%")` chance her flight is in the morning given that it is not delayed.
