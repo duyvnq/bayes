@@ -500,7 +500,10 @@ The result is `{r} c2_4`.
 
 d) The fact that maples are easy to get infected than other species explain why the posterior is higher than prior probability.
 
-:::{exr-2.6}
+---
+
+:::{#exr-2.6}
+
 *Restaurant ratings*
 
  The probability that Sandra will like a restaurant is 0.7. Among the restaurants that she likes, 20% have five stars on Yelp, 50% have four stars, and 30% have fewer than four stars. What other information do we need if we want to find the posterior probability that Sandra likes a restaurant given that it has fewer than four stars on Yelp?
