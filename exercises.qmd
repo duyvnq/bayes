@@ -412,7 +412,7 @@ $$
 P(V|S) = \frac{P(V)L(V|S)}{P(S)}
 $$
 
-```{r}
+```{r 2.4}
 #| echo: false
 
 result_2_4 <- round((0.05*0.7)/(0.05*0.7 + 0.095*0.3),3)
@@ -446,7 +446,7 @@ d) Compare the prior and posterior probability of the tree having mold. How did 
 
 **Solution**
 
-```{r}
+```{r 2.5}
 #| echo: false
 
 
@@ -529,3 +529,46 @@ $P(M)$ can easily be calculated using the Law of Total Probablity, which require
 - $L(\overline{L}|M)$: Likelihood that a restaurant as lower than four stars on Yelp given that Sandra does not like it, which is missing.
 
 In conclusion, we need to know likelihood that a restaurant as lower than four stars on Yelp given that Sandra does not like it in order to find the posterior probability that Sandra likes arestaurant given that it has fewer than four stars on Yelp.
+
+---
+
+:::{#exr-2.7}
+*Dating app*
+
+Matt is on a dating app looking for love. Matt swipes right on 8% of the profiles he views. Of the people that Matt swipes right on, 40% are men, 30% are women, 20% are non-binary, and 10% identify in another way. Of the people that Matt does not swipe right on, 45% are men, 40% are women, 10% are non-binary, and 5% identify in some other way.
+
+a) What’s the probability that a randomly chosen person on this dating app is non-binary?
+
+b) Given that Matt is looking at the profile of someone who is non-binary, what’s the posterior probability that he swipes right?
+
+:::
+
+**Solution**
+
+```{r 2.7}
+#| echo: false
+
+a2_7 <- 0.08*0.20 + (1-0.08)*0.10
+b2_7 <- (0.08*0.20)/a2_7
+```
+
+Let's call event "Matt swipes right" $R$, we have $P(R) = 0.08$.
+
+Call event "A person is men" $M$, "A person is women" $W$, "A person is non-binary" $N$, and "A person is identified in another way" $O$, we have $P(M|R)=0.40$, $P(W|R)=0.30$, $P(N|R)=0.20$, and $P(O|R)=0.10$. Also $P(M|\overline{R})=0.45$, $P(W|\overline{R})=0.40$, $P(N|\overline{R})=0.10$, and $P(O|\overline{R})=0.05$.
+
+a) Using Law of Total Probability, we can calculate the probability that a randomly chosen person on this dating app is non-binary, $P(N)$ as:
+
+$$
+P(N) = P(R)L(R|N) + P(\overline{R})L(\overline{R}|N)
+$$
+
+The result is `{r} a2_7`.
+
+b) Using Bayes' Rule, we can calculate the posterior probability that he swipes right Given that Matt is looking at the profile of someone who is non-binary, $P(R|N)$:
+
+$$
+P(R|N) = \frac{P(R)L(R|N)}{P(N)}
+$$
+
+The result is `{r} b2_7`.
+
