@@ -506,3 +506,23 @@ d) The fact that maples are easy to get infected than other species explain why 
  The probability that Sandra will like a restaurant is 0.7. Among the restaurants that she likes, 20% have five stars on Yelp, 50% have four stars, and 30% have fewer than four stars. What other information do we need if we want to find the posterior probability that Sandra likes a restaurant given that it has fewer than four stars on Yelp?
 
 :::
+
+**Solution**
+
+Call $L$ is the event "Sandra will like a restaurant", therefor $P(L)=0.70$
+
+Call event "The restaurant has five stars on Yelp" $E$, and "The restaurant has four stars on Yelp" $G$, and "The restaurant has lower than four stars on Yelp" $M$, we have $P(E|L)=0.20$, $P(G|L)=0.50$, and $P(M|L)=0.30$.
+
+To find the posterior probability that Sandra likes a restaurant given that it has fewer than four stars on Yelp, $P(L|M)$, we need to know the normalizing constant, $P(M)$, which stands for propotion of every restaurants that lower than four stars on Yelp.
+
+$P(M)$ can easily be calculated using the Law of Total Probablity, which requires:
+
+- $P(L)$: Probability that Sandra will like a restaurant, which is known.
+
+- $L(L|M)$: Likelihood that a restaurant as lower than four stars on Yelp given that Sandra like it, which is known.
+
+- $P(\overline{L})$: Probability that Sandra will like a restaurant, which is known by using $1-P(L)$.
+
+- $L(\overline{L}|M)$: Likelihood that a restaurant as lower than four stars on Yelp given that Sandra does not like it, which is missing.
+
+In conclusion, we need to know likelihood that a restaurant as lower than four stars on Yelp given that Sandra does not like it in order to find the posterior probability that Sandra likes arestaurant given that it has fewer than four stars on Yelp.
