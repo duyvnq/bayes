@@ -434,14 +434,13 @@ After plug in all the numbers, we have the result of. `{r} result_2_4`. The upda
 
 A local arboretum contains a variety of tree species, including elms, maples, and others. Unfortunately, 18% of all trees in the arboretum are infected with mold. Among the infected trees, 15% are elms, 80% are maples, and 5% are other species. Among the uninfected trees, 20% are elms, 10% are maples, and 70% are other species. In monitoring the spread of mold, an arboretum employee randomly selects a tree to test.
 
-a) What’s the prior probability that the selected tree has mold?
+a)  What’s the prior probability that the selected tree has mold?
 
-b) The tree happens to be a maple. What’s the probability that the employee would have selected a maple?
+b)  The tree happens to be a maple. What’s the probability that the employee would have selected a maple?
 
-c) What’s the posterior probability that the selected maple tree has mold?
+c)  What’s the posterior probability that the selected maple tree has mold?
 
-d) Compare the prior and posterior probability of the tree having mold. How did your understanding change in light of the fact that the tree is a maple?
-
+d)  Compare the prior and posterior probability of the tree having mold. How did your understanding change in light of the fact that the tree is a maple?
 :::
 
 **Solution**
@@ -456,33 +455,33 @@ c2_4 <- round((0.18*0.80)/b2_4,3)
 
 Before answering these questions, we need to name each event:
 
-- Event $E$: "A tree is elm"
+-   Event $E$: "A tree is elm"
 
-- Event $M$: "A tree is maple"
+-   Event $M$: "A tree is maple"
 
-- Event $O$: "A tree is not elm neither maple"
+-   Event $O$: "A tree is not elm neither maple"
 
-- Event $I$: "A tree is infected with mold"
+-   Event $I$: "A tree is infected with mold"
 
 With these notation and clues from the question, we have these data:
 
-- 18% of all trees in the arboretum are infected with mold: $P(I)=0.18$
+-   18% of all trees in the arboretum are infected with mold: $P(I)=0.18$
 
-- Among the infected trees, 15% are elms: $P(E|I)=0.15$
+-   Among the infected trees, 15% are elms: $P(E|I)=0.15$
 
-- Among the infected trees, 80% are maples: $P(M|I)=0.80$
+-   Among the infected trees, 80% are maples: $P(M|I)=0.80$
 
-- Among the infected trees, 5% are other species: $P(O|I)=0.05$
+-   Among the infected trees, 5% are other species: $P(O|I)=0.05$
 
-- Among the uninfected trees, 20% are elms: $P(E|\overline{I}) = 0.20$
+-   Among the uninfected trees, 20% are elms: $P(E|\overline{I}) = 0.20$
 
-- Among the uninfected trees, 10% are maples: $P(M|\overline{I}) = 0.10$
+-   Among the uninfected trees, 10% are maples: $P(M|\overline{I}) = 0.10$
 
-- Among the uninfected trees, 70% are  other species: $P(O|\overline{I}) = 0.70$
+-   Among the uninfected trees, 70% are other species: $P(O|\overline{I}) = 0.70$
 
-a) The prior probability that the selected tree has mold is $P(I)=0.18$
+a)  The prior probability that the selected tree has mold is $P(I)=0.18$
 
-b) Using the Law of Total Probability, we can calculate he probability that the employee would haveselected a maple, $P(M)$, by:
+b)  Using the Law of Total Probability, we can calculate he probability that the employee would haveselected a maple, $P(M)$, by:
 
 $$
 P(M) = P(I)L(I|M) + P(\overline{I})L(\overline{I}|M)
@@ -490,7 +489,7 @@ $$
 
 The result is `{r} b2_4`.
 
-c) Using Bayes' Rule, we can calculate the posterior probability that the selected maple tree has mold, $P(I|M)$:
+c)  Using Bayes' Rule, we can calculate the posterior probability that the selected maple tree has mold, $P(I|M)$:
 
 $$
 P(I|M) = \frac{P(I)L(I|M)}{P(M)}
@@ -498,16 +497,14 @@ $$
 
 The result is `{r} c2_4`.
 
-d) The fact that maples are easy to get infected than other species explain why the posterior is higher than prior probability.
+d)  The fact that maples are easy to get infected than other species explain why the posterior is higher than prior probability.
 
----
+------------------------------------------------------------------------
 
-:::{#exr-2.6}
-
+::: {#exr-2.6}
 *Restaurant ratings*
 
- The probability that Sandra will like a restaurant is 0.7. Among the restaurants that she likes, 20% have five stars on Yelp, 50% have four stars, and 30% have fewer than four stars. What other information do we need if we want to find the posterior probability that Sandra likes a restaurant given that it has fewer than four stars on Yelp?
-
+The probability that Sandra will like a restaurant is 0.7. Among the restaurants that she likes, 20% have five stars on Yelp, 50% have four stars, and 30% have fewer than four stars. What other information do we need if we want to find the posterior probability that Sandra likes a restaurant given that it has fewer than four stars on Yelp?
 :::
 
 **Solution**
@@ -520,27 +517,26 @@ To find the posterior probability that Sandra likes a restaurant given that it h
 
 $P(M)$ can easily be calculated using the Law of Total Probablity, which requires:
 
-- $P(L)$: Probability that Sandra will like a restaurant, which is known.
+-   $P(L)$: Probability that Sandra will like a restaurant, which is known.
 
-- $L(L|M)$: Likelihood that a restaurant as lower than four stars on Yelp given that Sandra like it, which is known.
+-   $L(L|M)$: Likelihood that a restaurant as lower than four stars on Yelp given that Sandra like it, which is known.
 
-- $P(\overline{L})$: Probability that Sandra will like a restaurant, which is known by using $1-P(L)$.
+-   $P(\overline{L})$: Probability that Sandra will like a restaurant, which is known by using $1-P(L)$.
 
-- $L(\overline{L}|M)$: Likelihood that a restaurant as lower than four stars on Yelp given that Sandra does not like it, which is missing.
+-   $L(\overline{L}|M)$: Likelihood that a restaurant as lower than four stars on Yelp given that Sandra does not like it, which is missing.
 
 In conclusion, we need to know likelihood that a restaurant as lower than four stars on Yelp given that Sandra does not like it in order to find the posterior probability that Sandra likes arestaurant given that it has fewer than four stars on Yelp.
 
----
+------------------------------------------------------------------------
 
-:::{#exr-2.7}
+::: {#exr-2.7}
 *Dating app*
 
 Matt is on a dating app looking for love. Matt swipes right on 8% of the profiles he views. Of the people that Matt swipes right on, 40% are men, 30% are women, 20% are non-binary, and 10% identify in another way. Of the people that Matt does not swipe right on, 45% are men, 40% are women, 10% are non-binary, and 5% identify in some other way.
 
-a) What’s the probability that a randomly chosen person on this dating app is non-binary?
+a)  What’s the probability that a randomly chosen person on this dating app is non-binary?
 
-b) Given that Matt is looking at the profile of someone who is non-binary, what’s the posterior probability that he swipes right?
-
+b)  Given that Matt is looking at the profile of someone who is non-binary, what’s the posterior probability that he swipes right?
 :::
 
 **Solution**
@@ -556,7 +552,7 @@ Let's call event "Matt swipes right" $R$, we have $P(R) = 0.08$.
 
 Call event "A person is men" $M$, "A person is women" $W$, "A person is non-binary" $N$, and "A person is identified in another way" $O$, we have $P(M|R)=0.40$, $P(W|R)=0.30$, $P(N|R)=0.20$, and $P(O|R)=0.10$. Also $P(M|\overline{R})=0.45$, $P(W|\overline{R})=0.40$, $P(N|\overline{R})=0.10$, and $P(O|\overline{R})=0.05$.
 
-a) Using Law of Total Probability, we can calculate the probability that a randomly chosen person on this dating app is non-binary, $P(N)$ as:
+a)  Using Law of Total Probability, we can calculate the probability that a randomly chosen person on this dating app is non-binary, $P(N)$ as:
 
 $$
 P(N) = P(R)L(R|N) + P(\overline{R})L(\overline{R}|N)
@@ -564,7 +560,7 @@ $$
 
 The result is `{r} a2_7`.
 
-b) Using Bayes' Rule, we can calculate the posterior probability that he swipes right Given that Matt is looking at the profile of someone who is non-binary, $P(R|N)$:
+b)  Using Bayes' Rule, we can calculate the posterior probability that he swipes right Given that Matt is looking at the profile of someone who is non-binary, $P(R|N)$:
 
 $$
 P(R|N) = \frac{P(R)L(R|N)}{P(N)}
@@ -572,15 +568,14 @@ $$
 
 The result is `{r} b2_7`.
 
-:::{#exr-2.8}
+::: {#exr-2.8}
 *Flight delays*
 
 For a certain airline, 30% of the flights depart in the morning, 30% depart in the afternoon, and 40% depart in the evening. Frustratingly, 15% of all flights are delayed. Of the delayed flights, 40% are morning flights, 50% are afternoon flights, and 10% are evening flights. Alicia and Mine are taking separate flights to attend a conference.
 
-a) Mine is on a morning flight. What’s the probability that her flight will be delayed?
+a)  Mine is on a morning flight. What’s the probability that her flight will be delayed?
 
-b) Alicia’s flight is not delayed. What’s the probability that she’s on a morning flight?
-
+b)  Alicia’s flight is not delayed. What’s the probability that she’s on a morning flight?
 :::
 
 **Solution**
@@ -598,7 +593,7 @@ Let's call event "flight depart in the morning" $M$, "flight depart in the after
 
 Let's call event "flight is delayed" $D$, we have $P(D)=0.15$. Also, $P(M|D)=0.40$, $P(A|D)=0.50$, $P(E|D)=0.10$.
 
-a) To calculate the probability that Mine's flight will be delayed given that her flight is in the morning, $P(D|M)$, we use Bayes' Rule:
+a)  To calculate the probability that Mine's flight will be delayed given that her flight is in the morning, $P(D|M)$, we use Bayes' Rule:
 
 $$
 P(D|M) = \frac{P(D)L(D|M)}{P(M)}
@@ -606,7 +601,7 @@ $$
 
 The result is `{r} a2_8`, which mean there are `{r} paste0(a2_8*100, "%")` chance her flight will be delayed of she flight in the morning.
 
-b) The probability that Alicia's on a morning flight given that her flight is not delayed is noted as $P(M|\overline{D})$.
+b)  The probability that Alicia's on a morning flight given that her flight is not delayed is noted as $P(M|\overline{D})$.
 
 Using the Bayes' Rule, we have
 
@@ -621,3 +616,62 @@ P(M|\overline{D}) = \frac{P(M)[1 - P(D|M)]}{1-P(D)}
 $$
 
 Plug in all the number, the result is `{r} b2_8`, which mean there is `{r} paste0(b2_8*100, "%")` chance her flight is in the morning given that it is not delayed.
+
+---
+
+::: {#exr-2.9}
+*Good mood, bad mood*
+
+Your roommate has two moods, good or bad. In general, they’re in a good mood 40% of the time. Yet you’ve noticed that their moods are related to how many text messages they receive the day before. If they’re in a good mood today, there’s a 5% chance they had 0 texts, an 84% chance they had between 1 and 45 texts, and an 11% chance they had more than 45 texts yesterday. If they’re in a bad mood today, there’s a 13% chance they had 0 texts, an 86% chance they had between 1 and 45 texts, and a 1% chance they had more than 45 texts yesterday.
+
+a)  Use the provided information to fill in the table.
+
+b)  Today’s a new day. Without knowing anything about the previous day’s text messages, what’s the probability that your roommate is in a good mood? What part of the Bayes’ Rule equation is this: the prior, likelihood, normalizing constant, or posterior?
+
+c)  You surreptitiously took a peek at your roommate’s phone (we are attempting to withhold judgment of this dastardly maneuver) and see that your roommate received 50 text messages yesterday. How likely are they to have received this many texts if they’re in a good mood today? What part of the Bayes’ Rule equation is this?
+
+d)  What is the posterior probability that your roommate is in a good mood given that they received 50 text messages yesterday?
+:::
+
+**Solution**
+
+```{r 2.9}
+#| echo: false
+
+a2_9_a <- 0.4*0.05 + 0.6*0.13
+a2_9_b <- 0.4*0.84 + 0.6*0.86
+a2_9_c <- 0.4*0.11 + 0.6*0.01
+b2_9 <- 0.4*0.11/a2_9_c
+```
+
+a)  
+
+|            | good mood | bad mood | total |
+|------------|-----------|----------|-------|
+| 0 texts    | 0.05      | 0.13     |`{r} round(a2_9_a,2)`|
+| 1-45 texts | 0.84      | 0.86     |`{r} round(a2_9_b,2)`|
+| 46+ texts  | 0.11      | 0.01     |`{r} round(a2_9_c,2)`|
+| Total      | 1         | 1        | 1     |
+
+Call the event "roommate is in a good mood" $G$, we have $P(G)=0.40$. Call event "they received 0 texts yesterday" $A$, "they received 1-45 texts yesterday" $B$, "they received 46+ texts yesterday" $C$.
+
+To fill the table, we need to calculate $P(A)$, $P(B)$, $P(C)$. Using the Law of Total Probability, we have:
+
+$$
+P(A) = P(G)L(G|A) + P(\overline{G})L(\overline{G}|A)
+$$
+
+Apply for $P(B)$, $P(C)$, we can fill the table for `total` column.
+
+b) Without knowing anything about the previous day’s text messages,the probability that roommate is in a good mood is $P(G)=0.40$. This is the prior in the Bayes' Rule equation.
+
+c) The likelihood that they to have received this many texts if they’re in agood mood today is $L(G|C) = P(C|G) = 0.11$, which is the likelihood in the Bayes' Rule equation.
+
+d) The posterior probability that roommate is in a good mood given that they received 50 text messages yesterday, $P(G|C)$, is calculated using:
+
+$$
+P(G|C) = \frac{P(G)L(G|C)}{P(C)}
+$$
+
+The result is `{r} round(b2_9,2)`.
+
