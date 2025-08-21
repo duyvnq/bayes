@@ -416,16 +416,93 @@ $$
 #| echo: false
 
 result_2_4 <- round((0.05*0.7)/(0.05*0.7 + 0.095*0.3),3)
+result_2_2_2 <- 1 - result_2_4
 ```
 
-After plug in all the numbers, we have the result of `{r} result_2_4`.
+After plug in all the numbers, we have the result of. `{r} result_2_4`. The updated table is:
 
----
+| event      | $V$              | $\overline{V}$     | total |
+|------------|------------------|--------------------|-------|
+| prior      | 0.05             | 0.095              | 1     |
+| likelihood | 0.7              | 0.03               |       |
+| posterior  | `{r} result_2_4` | `{r} result_2_2_2` | 1     |
+
+------------------------------------------------------------------------
 
 ::: {#exr-2.5}
-
 *Sick trees*
 
+A local arboretum contains a variety of tree species, including elms, maples, and others. Unfortunately, 18% of all trees in the arboretum are infected with mold. Among the infected trees, 15% are elms, 80% are maples, and 5% are other species. Among the uninfected trees, 20% are elms, 10% are maples, and 70% are other species. In monitoring the spread of mold, an arboretum employee randomly selects a tree to test.
 
+a) What’s the prior probability that the selected tree has mold?
+
+b) The tree happens to be a maple. What’s the probability that the employee would have selected a maple?
+
+c) What’s the posterior probability that the selected maple tree has mold?
+
+d) Compare the prior and posterior probability of the tree having mold. How did your understanding change in light of the fact that the tree is a maple?
+
+:::
+
+**Solution**
+
+```{r}
+#| echo: false
+
+
+b2_4 <- 0.18*0.8 + (1-0.18)*0.1
+c2_4 <- round((0.18*0.80)/b2_4,3)
+```
+
+Before answering these questions, we need to name each event:
+
+- Event $E$: "A tree is elm"
+
+- Event $M$: "A tree is maple"
+
+- Event $O$: "A tree is not elm neither maple"
+
+- Event $I$: "A tree is infected with mold"
+
+With these notation and clues from the question, we have these data:
+
+- 18% of all trees in the arboretum are infected with mold: $P(I)=0.18$
+
+- Among the infected trees, 15% are elms: $P(E|I)=0.15$
+
+- Among the infected trees, 80% are maples: $P(M|I)=0.80$
+
+- Among the infected trees, 5% are other species: $P(O|I)=0.05$
+
+- Among the uninfected trees, 20% are elms: $P(E|\overline{I}) = 0.20$
+
+- Among the uninfected trees, 10% are maples: $P(M|\overline{I}) = 0.10$
+
+- Among the uninfected trees, 70% are  other species: $P(O|\overline{I}) = 0.70$
+
+a) The prior probability that the selected tree has mold is $P(I)=0.18$
+
+b) Using the Law of Total Probability, we can calculate he probability that the employee would haveselected a maple, $P(M)$, by:
+
+$$
+P(M) = P(I)L(I|M) + P(\overline{I})L(\overline{I}|M)
+$$
+
+The result is `{r} b2_4`.
+
+c) Using Bayes' Rule, we can calculate the posterior probability that the selected maple tree has mold, $P(I|M)$:
+
+$$
+P(I|M) = \frac{P(I)L(I|M)}{P(M)}
+$$
+
+The result is `{r} c2_4`.
+
+d) The fact that maples are easy to get infected than other species explain why the posterior is higher than prior probability.
+
+:::{exr-2.6}
+*Restaurant ratings*
+
+ The probability that Sandra will like a restaurant is 0.7. Among the restaurants that she likes, 20% have five stars on Yelp, 50% have four stars, and 30% have fewer than four stars. What other information do we need if we want to find the posterior probability that Sandra likes a restaurant given that it has fewer than four stars on Yelp?
 
 :::
