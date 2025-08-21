@@ -675,3 +675,61 @@ $$
 
 The result is `{r} round(b2_9,2)`.
 
+---
+
+:::{#exr-2.10}
+*LGBTQ students: rural and urban*
+
+A recent study of 415,000 Californian public middle school and high school students found that 8.5% live in rural areas and 91.5% in urban areas. Further, 10% of students in rural areas and 10.5% of students in urban areas identified as Lesbian, Gay, Bisexual, Transgender, or Queer (LGBTQ). Consider one student from the study.
+
+a) What’s the probability they identify as LGBTQ?
+
+b) If they identify as LGBTQ, what’s the probability that they live in a rural area?
+
+c) If they do not identify as LGBTQ, what’s the probability that they live in a rural area?
+
+:::
+
+**Solution**
+
+```{r 2.10}
+#| echo: false
+
+a2_10 <- 0.915*0.105 + (1-0.915)*0.10
+b2_10 <- (1-0.915)*0.1/a2_10
+c2_10 <- (1-0.915)*(1-0.1)/(1-a2_10)
+```
+
+Call event $U$ as "The student lives in urban areas", we have $P(U)=0.915$.
+
+Call event $G$ as "The student identifies themselves as LGBTQ", we have $P(G|U)=0.105$ and $P(G|\overline{U})=0.10$.
+
+a) The probability a student identifies as LGBTQ is denoted as $P(G)$.
+
+Using the Law of Total Probability:
+
+$$
+P(G) = P(U)L(U|G) + P(\overline{U})L(\overline{U}|G)
+$$
+
+The result is `{r} round(a2_10,2)`.
+
+b) If they identify as LGBTQ, the probability that they live in a rural area is denoted as $P(\overline{U}|G)$.
+
+Using Bayes' Rule, we have:
+
+$$
+P(\overline{U}|G) = \frac{P(\overline{U})L(\overline{U}|G))}{P(G)}
+$$
+
+The result is `{r} round(b2_10,2)`.
+
+c) If they do not identify as LGBTQ, the probability that they live in a rural area is denoted as $P(\overline{U}|\overline{G})$.
+
+Using Bayes' Rule, we have:
+
+$$
+P(\overline{U}|\overline{G}) = \frac{P(\overline{U})L(\overline{U}|\overline{G}))}{P(\overline{G})}
+$$
+
+The result is `{r} round(c2_10,2)`.
