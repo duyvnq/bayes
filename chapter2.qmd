@@ -1,5 +1,5 @@
 ---
-title: "Bayesian Statistics Workbook"
+title: "Bayesian Statistics Workbook - Chapter 2 Bayes’ Rule"
 format:
   pdf:
     documentclass: scrartcl
@@ -9,11 +9,9 @@ author: "Vu Nguyen Quang Duy"
 toc: true
 ---
 
-# Bayes' Rules
+# Chapter Summary
 
-## Chapter Summary
-
-### Conditional vs unconditional probability
+## Conditional vs unconditional probability
 
 Let $A$ and $B$ be two events, The **unconditional probability** of $A$, measures the probability of observing $A$, without any knowledge of $B$. In contrast, the **conditional probability** of $A$ given $B$, $P(A|B)$, measures the probability of observing $A$ in light of the information that $B$ occured.
 
@@ -29,7 +27,7 @@ $$
 P(A|B) \neq P(B|A)
 $$
 
-### Independent events
+## Independent events
 
 Two events $A$ and $B$ are **independent** if and only if the occurrence of $B$ does not tell us anything about the occurrence of $A$:
 
@@ -37,7 +35,7 @@ $$
 P(A|B) = P(A)
 $$
 
-### Probability vs likelihood
+## Probability vs likelihood
 
 When $B$ is known, the **conditional probability function** $P(\cdot|B)$ allows us to compare the probabilities of an unknown event, $A$ and $\overline{A}$, occurring with $B$:
 
@@ -51,7 +49,7 @@ $$
 L(B|A) \text{ vs } L(\overline{B}|A)
 $$
 
-### Joint and conditional probabilities
+## Joint and conditional probabilities
 
 For events $A$ and $B$, the joint probablity of $A \cap B$ is calculated by weighting the conditional probability of $A$ given $B$ by the marginal probability of $B$:
 
@@ -73,13 +71,13 @@ $$ {#eq-22}
 
 Thus, to evaluate the chance that $A$ occurs in light of information $B$ we can consider the chance that they occur together, $P(A \cap B)$, relative to the chance that $B$ occurs at all, $P(B)$
 
-### Law of Total Probability (LTP)
+## Law of Total Probability (LTP)
 
 $$
 P(A) = P(A \cap B) + P(A \cap \overline{B}) = P(A|B)P(B) + P(A|\overline{B})P(\overline{B})
 $$ {#eq-23}
 
-### Bayes' Rule for events
+## Bayes' Rule for events
 
 For events $A$ and $B$, the posterior probability of $B$ given $A$ follows by combining @eq-21 with @eq-22 and recognizing that we can evaluate data $A$ through the likelihood function, $L(B|A) = P(A|B)$ and $L(\overline{B}|A) = P(A|\overline{B})$:
 
@@ -99,7 +97,7 @@ $$
 \text{posterior} = \frac{\text{prior} \cdot \text{likelihood}}{\text{normalizing constant}}
 $$
 
-### Discrete probability model
+## Discrete probability model
 
 Let $Y$ be a discrete random variable. The probability model of $Y$ is specified by a **probability mass function (pmf)** $f(y)$. Thi pmf defines the probability of any given outcome $y$,
 
@@ -113,7 +111,7 @@ and has the following properties:
 
 -   $\sum_{\text{all } y}f(y) = 1$, i.e., the probabilities of all possible outcomes of $y$ sum to 1.
 
-### Conditional probability model of data $Y$
+## Conditional probability model of data $Y$
 
 Let $Y$ be a discrete random variable and $\pi$ ve a parameter uop which $Y$ depends. The the conditional probability model of Y given $\pi$ is specified by conditional pmf $f(y|\pi)$. This pmf specifies the conditional probability of observing $y$ given $\pi$,
 
@@ -127,7 +125,7 @@ and has the following properties:
 
 -   $\sum_{\text{all } y}f(y|\pi) = 1$
 
-### The Binomal model
+## The Binomal model
 
 Let random variable $Y$ be the *number of successes* in a *fixed number of trials* $n$. Assume that the trials are *independent* and that the *probability of success* in each trial is $\pi$. Then the conditional depdendence of $Y$ on $\pi$ can be modeled by the Binomal model with **parameters** $n$ and $\pi$. In mathematical notation:
 
@@ -141,7 +139,7 @@ $$
 f(y|\pi) = \binom{n}{y} \pi ^2 \text{ for } y \in \{0,1,2, \dots ,n\}
 $$ {#eq-27}
 
-### Probability mass functions vs likelihood functions
+## Probability mass functions vs likelihood functions
 
 When $\pi$ is known, the **conditional pmf** $f(\cdot | \pi)$ allows us to compare the probabilites of different possible values of data $Y$ (e.g., $y_1$ or $y_2$) occuring with $\pi$:
 
@@ -157,7 +155,7 @@ $$
 
 Thus, $L(\cdot|y)$ provides the tool we need to evaluate the relative compatibility of data $Y = y$ with various $\pi$ values.
 
-### Bayes' Rule for variables
+## Bayes' Rule for variables
 
 For any variables $\pi$ and $Y$, let $f(\pi)$ denote the prior pmf of $\pi$ and $L(\pi|y)$ denote the likelihood function of $\pi$ given observed data $Y=y$. Then the posterior pmf of $\pi$ given data $Y = y$ is:
 
@@ -171,7 +169,7 @@ $$
 f(y) = \sum_{\text{all } y} f(\pi) L(\pi|y)
 $$
 
-### Propotionality
+## Propotionality
 
 Since $f(y)$ is merely a normalizing constant which does not depend of $\pi$, the posterior pmf $f(\pi|y)$ is propotional to the product of $f(\pi)$ and $L(\pi|y)$:
 
@@ -189,9 +187,9 @@ The significance of this proportionality is that all the information we need to 
 
 \pagebreak
 
-## Excercises
+# Excercises
 
-### Buidling up to Bayes' Rule
+## Buidling up to Bayes' Rule
 
 ::: {#exr-1_65}
 *Comparing the prior and posterior*
@@ -377,7 +375,7 @@ $$
 f(y|0.80) = \binom{60}{y} 0,80^2 \text{ for } y \in \{0,1,2, \dots ,60\}
 $$
 
-### Practice Bayes’ Rule for events
+## Practice Bayes’ Rule for events
 
 ::: {#exr-2.4}
 *Vampires?*
@@ -617,7 +615,7 @@ $$
 
 Plug in all the number, the result is `{r} b2_8`, which mean there is `{r} paste0(b2_8*100, "%")` chance her flight is in the morning given that it is not delayed.
 
----
+------------------------------------------------------------------------
 
 ::: {#exr-2.9}
 *Good mood, bad mood*
@@ -646,12 +644,12 @@ b2_9 <- 0.4*0.11/a2_9_c
 
 a)  
 
-|            | good mood | bad mood | total |
-|------------|-----------|----------|-------|
-| 0 texts    | 0.05      | 0.13     |`{r} round(a2_9_a,2)`|
-| 1-45 texts | 0.84      | 0.86     |`{r} round(a2_9_b,2)`|
-| 46+ texts  | 0.11      | 0.01     |`{r} round(a2_9_c,2)`|
-| Total      | 1         | 1        | 1     |
+|            | good mood | bad mood | total                 |
+|------------|-----------|----------|-----------------------|
+| 0 texts    | 0.05      | 0.13     | `{r} round(a2_9_a,2)` |
+| 1-45 texts | 0.84      | 0.86     | `{r} round(a2_9_b,2)` |
+| 46+ texts  | 0.11      | 0.01     | `{r} round(a2_9_c,2)` |
+| Total      | 1         | 1        | 1                     |
 
 Call the event "roommate is in a good mood" $G$, we have $P(G)=0.40$. Call event "they received 0 texts yesterday" $A$, "they received 1-45 texts yesterday" $B$, "they received 46+ texts yesterday" $C$.
 
@@ -663,11 +661,11 @@ $$
 
 Apply for $P(B)$, $P(C)$, we can fill the table for `total` column.
 
-b) Without knowing anything about the previous day’s text messages,the probability that roommate is in a good mood is $P(G)=0.40$. This is the prior in the Bayes' Rule equation.
+b)  Without knowing anything about the previous day’s text messages,the probability that roommate is in a good mood is $P(G)=0.40$. This is the prior in the Bayes' Rule equation.
 
-c) The likelihood that they to have received this many texts if they’re in agood mood today is $L(G|C) = P(C|G) = 0.11$, which is the likelihood in the Bayes' Rule equation.
+c)  The likelihood that they to have received this many texts if they’re in agood mood today is $L(G|C) = P(C|G) = 0.11$, which is the likelihood in the Bayes' Rule equation.
 
-d) The posterior probability that roommate is in a good mood given that they received 50 text messages yesterday, $P(G|C)$, is calculated using:
+d)  The posterior probability that roommate is in a good mood given that they received 50 text messages yesterday, $P(G|C)$, is calculated using:
 
 $$
 P(G|C) = \frac{P(G)L(G|C)}{P(C)}
@@ -675,19 +673,18 @@ $$
 
 The result is `{r} round(b2_9,2)`.
 
----
+------------------------------------------------------------------------
 
-:::{#exr-2.10}
+::: {#exr-2.10}
 *LGBTQ students: rural and urban*
 
 A recent study of 415,000 Californian public middle school and high school students found that 8.5% live in rural areas and 91.5% in urban areas. Further, 10% of students in rural areas and 10.5% of students in urban areas identified as Lesbian, Gay, Bisexual, Transgender, or Queer (LGBTQ). Consider one student from the study.
 
-a) What’s the probability they identify as LGBTQ?
+a)  What’s the probability they identify as LGBTQ?
 
-b) If they identify as LGBTQ, what’s the probability that they live in a rural area?
+b)  If they identify as LGBTQ, what’s the probability that they live in a rural area?
 
-c) If they do not identify as LGBTQ, what’s the probability that they live in a rural area?
-
+c)  If they do not identify as LGBTQ, what’s the probability that they live in a rural area?
 :::
 
 **Solution**
@@ -704,7 +701,7 @@ Call event $U$ as "The student lives in urban areas", we have $P(U)=0.915$.
 
 Call event $G$ as "The student identifies themselves as LGBTQ", we have $P(G|U)=0.105$ and $P(G|\overline{U})=0.10$.
 
-a) The probability a student identifies as LGBTQ is denoted as $P(G)$.
+a)  The probability a student identifies as LGBTQ is denoted as $P(G)$.
 
 Using the Law of Total Probability:
 
@@ -714,7 +711,7 @@ $$
 
 The result is `{r} round(a2_10,2)`.
 
-b) If they identify as LGBTQ, the probability that they live in a rural area is denoted as $P(\overline{U}|G)$.
+b)  If they identify as LGBTQ, the probability that they live in a rural area is denoted as $P(\overline{U}|G)$.
 
 Using Bayes' Rule, we have:
 
@@ -724,7 +721,7 @@ $$
 
 The result is `{r} round(b2_10,2)`.
 
-c) If they do not identify as LGBTQ, the probability that they live in a rural area is denoted as $P(\overline{U}|\overline{G})$.
+c)  If they do not identify as LGBTQ, the probability that they live in a rural area is denoted as $P(\overline{U}|\overline{G})$.
 
 Using Bayes' Rule, we have:
 
@@ -733,3 +730,289 @@ P(\overline{U}|\overline{G}) = \frac{P(\overline{U})L(\overline{U}|\overline{G})
 $$
 
 The result is `{r} round(c2_10,2)`.
+
+## Practice Bayes’ Rule for random variables
+
+::: {#exr-2.11}
+*Internship*
+
+Muhammad applies for six equally competitive data science internships. He has the following prior model for his chances of getting into any given internship, $\pi$:
+
+| $\pi$    | 0.3  | 0.4  | 0.5  | Total |
+|----------|------|------|------|-------|
+| $f(\pi)$ | 0.25 | 0.60 | 0.15 | 1     |
+
+a) Let $Y$ be the number of internship offers that Muhammad gets. Specify the model for the dependence of $Y$ on $\pi$ and the corresponding pmf, $f(y|\pi)$.
+
+b) Muhammad got some pretty amazing news. He was offered four of the six internships! How likely would this be if $\pi=0.3$?
+
+c) Construct the posterior model of $\pi$ in light of Muhammad’s internship news.
+:::
+
+**Solution**
+
+
+```{r general_function}
+#| echo: false
+#| message: false
+#| warning: false
+#| result: hide
+
+library(tidyverse)
+library(knitr)
+
+a2_11 <- dbinom(4, 6, 0.3)
+n <- 6
+pi <- c(0.3, 0.4, 0.5)
+f_pi <- c(0.25, 0.6, 0.15)
+
+table <- data.frame(
+  "pi" = rep(pi, each = n),
+  "f_pi" = rep(f_pi, each = n),
+  "y" = rep(1:n,length(unique(pi)))
+)
+
+table <- table |> 
+  mutate(L_pi_y = dbinom(y,n,pi)) |> 
+  mutate(const = L_pi_y*f_pi)
+
+f_y <- function(x){
+  const <- table |> 
+    filter(y == x) |> 
+    select(const) |> 
+    pull()
+  norm_const <- sum(const)
+  return(norm_const)
+}
+
+f_pi_y <- function(x){
+  n_c <- f_y(x)
+  post <- table |> 
+    mutate(nor_con = rep(n_c, nrow(table))) |> 
+    filter(y == x) |> 
+    mutate(posterior = f_pi*L_pi_y/n_c) |> 
+    select(posterior)
+  return(post)
+}
+
+prior_post <- data.frame(
+  "pi" = pi,
+  "prior" = f_pi,
+  "posterior" = f_pi_y(4)
+) 
+
+prior_post_kable <- kable(prior_post)
+
+prior_post <- prior_post |> 
+  pivot_longer(cols = -pi,
+  names_to = "model",
+  values_to = "f_pi")
+
+plot <- ggplot(prior_post, aes(x = pi, y = f_pi, fill = model)) +
+  geom_bar(stat = "identity", width = 0.01, position = position_dodge(width = 0.02))+
+  geom_text(aes(label = round(f_pi, 3), vjust = -0.5), position = position_dodge(width = 0.02), size = 1.5) +
+  scale_y_continuous(limits = c(0, 1)) +
+  theme_bw()
+```
+
+a) $f(y|\pi)$ would be a binomal model because:
+
+- It has a fixed number of trials, $n=6$.
+
+- The outcome of each trial is only "success" or "fail".
+
+- The probability for success each trial is equal across trials, which is $\pi$.
+
+The pmf for $f(y|\pi)$ is:
+
+$$
+f(y|\pi) = \binom{6}{y}\pi^2 \text{ for } y \in \{0,1,2,\dots,6\}
+$$
+
+b) Muhammad was offered four of the six internships, which means $y=4$. 
+
+With $\pi=0.3$, we have:
+
+$$
+f(4|0.3) = \binom{6}{4}\times 0.3^2
+$$
+
+The results is `{r} round(a2_11,3)`.
+
+c) The posterior model of𝜋in light of Muhammad’s internship news is denoted as $f(\pi|y=4)$.
+
+Using Bayes' Rule, we have:
+
+$$
+f(\pi|y=4) = \frac{f(\pi)L(\pi|y=4)}{f(y=4)}
+$$
+
+where, by the Law of Total Probability, the overall probability of observing data $Y=y$ accrossall possible $\pi$, $f(y)$, is:
+
+$$
+f(y=4) = \sum_{\text{all } y}f(\pi)L(\pi|y = 4)
+$$
+
+With the Muhammad’s internship news, we can construct the posterior model of $\pi$. The results are:
+
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 2
+#| fig-align: center
+
+prior_post_kable
+plot
+```
+
+---
+
+:::{#exr-2.12}
+*Making mugs*
+
+Miles is learning how to make a mug in his ceramics class. A difficult part of the process is creating or “pulling” the handle. His prior model of $\pi$, the probability that one of his handles will actually be good enough for a mug, is below:
+
+| $\pi$    | 0.1  | 0.25  | 0.4  | Total |
+|----------|------|------|------|-------|
+| $f(\pi)$ | 0.2 | 0.45 | 0.35 | 1     |
+
+a) Miles has enough clay for 7 handles. Let $Y$ be the number of handles that will be good enough for a mug. Specify the model for the dependence of $Y$ on $\pi$ and the corresponding pmf, $f(y|\pi)$.
+
+b) Miles pulls 7 handles and only 1 of them is good enough for a mug. What is the posterior pmf of $\pi$, $f(\pi|y=1)$
+
+c) Compare the posterior model to the prior model of $\pi$. How would you characterize the differences between them?
+
+d) Miles’ instructor Kris had a different prior for his ability to pull a handle (below). Find Kris’s posterior $f(\pi|y=1)$ and compare it to Miles’.
+
+| $\pi$    | 0.1  | 0.25  | 0.4  | Total |
+|----------|------|------|------|-------|
+| $f(\pi)$ | 0.15 | 0.15 | 0.70 | 1     |
+
+:::
+
+**Solution**
+
+a) $f(y|\pi)$ would be a binomal model because:
+
+- It has a fixed number of trials, $n=7$.
+
+- The outcome of each trial is only "success" or "fail".
+
+- The probability for success each trial is equal across trials, which is $\pi$.
+
+The pmf for $f(y|\pi)$ is:
+
+$$
+f(y|\pi) = \binom{7}{y}\pi^2 \text{ for } y \in \{0,1,2,\dots,7\}
+$$
+
+c) The posterior model of pmf of $\pi$ given new information is denoted as $f(\pi|y=1)$.
+
+Using Bayes' Rule, we have:
+
+$$
+f(\pi|y=1) = \frac{f(\pi)L(\pi|y=1)}{f(y=1)}
+$$
+
+where, by the Law of Total Probability, the overall probability of observing data $Y=y$ accrossall possible $\pi$, $f(y)$, is:
+
+$$
+f(y=1) = \sum_{\text{all } y}f(\pi)L(\pi|y = 1)
+$$
+
+With the Muhammad’s internship news, we can construct the posterior model of $\pi$. The results are:
+
+```{r 2.12b}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 2
+#| fig-align: center
+
+n <- 7
+pi <- c(0.1, 0.25, 0.4)
+f_pi <- c(0.2, 0.45, 0.35)
+
+table <- data.frame(
+  "pi" = rep(pi, each = n),
+  "f_pi" = rep(f_pi, each = n),
+  "y" = rep(1:n,length(unique(pi)))
+)
+
+table <- table |> 
+  mutate(L_pi_y = dbinom(y,n,pi)) |> 
+  mutate(const = L_pi_y*f_pi)
+
+prior_post <- data.frame(
+  "pi" = pi,
+  "prior" = f_pi,
+  "posterior" = f_pi_y(1)
+) 
+
+prior_post_kable <- kable(prior_post, digits = 3)
+
+prior_post <- prior_post |> 
+  pivot_longer(cols = -pi,
+  names_to = "model",
+  values_to = "f_pi")
+
+plot <- ggplot(prior_post, aes(x = pi, y = f_pi, fill = model)) +
+  geom_bar(stat = "identity", width = 0.01, position = position_dodge(width = 0.02))+
+  geom_text(aes(label = round(f_pi, 3), vjust = -0.5), position = position_dodge(width = 0.02), size = 1.5) +
+  scale_y_continuous(limits = c(0, 1)) +
+  theme_bw()
+
+
+prior_post_kable
+plot
+
+```
+
+c) The posterior distribution reflects the information from the observation, which suggests that a moderate probability for a good handle is more likely, and the belief in very high or very low probabilities has adjusted accordingly.
+
+d) The results are:
+
+```{r 2.12c}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 2
+#| fig-align: center
+
+n <- 7
+pi <- c(0.1, 0.25, 0.4)
+f_pi <- c(0.15, 0.15, 0.70)
+
+table <- data.frame(
+  "pi" = rep(pi, each = n),
+  "f_pi" = rep(f_pi, each = n),
+  "y" = rep(1:n,length(unique(pi)))
+)
+
+table <- table |> 
+  mutate(L_pi_y = dbinom(y,n,pi)) |> 
+  mutate(const = L_pi_y*f_pi)
+
+prior_post <- data.frame(
+  "pi" = pi,
+  "prior" = f_pi,
+  "posterior" = f_pi_y(1)
+) 
+
+prior_post_kable <- kable(prior_post, digits = 3)
+
+prior_post <- prior_post |> 
+  pivot_longer(cols = -pi,
+  names_to = "model",
+  values_to = "f_pi")
+
+plot <- ggplot(prior_post, aes(x = pi, y = f_pi, fill = model)) +
+  geom_bar(stat = "identity", width = 0.01, position = position_dodge(width = 0.02))+
+  geom_text(aes(label = round(f_pi, 3), vjust = -0.5), position = position_dodge(width = 0.02), size = 1.5) +
+  scale_y_continuous(limits = c(0, 1)) +
+  theme_bw()
+
+
+prior_post_kable
+plot
+
+```
+
